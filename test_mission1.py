@@ -21,13 +21,22 @@ class TestMission1(unittest.TestCase):
         expected_product_count = 1
         self.assertEqual(actual_product_count, expected_product_count)
 
-    def test_get_product_count_2(self):
-        raw_input = create_raw_input([10, 20])
+    def test_get_product_count_example_1(self):
+        raw_input = create_raw_input([5, 10, 2, 3])
         input_lines = raw_input
 
         actual_product_count = mission1.get_product_count(input_lines)
 
-        expected_product_count = 2
+        expected_product_count = 4
+        self.assertEqual(actual_product_count, expected_product_count)
+
+    def test_get_product_count_example_2(self):
+        raw_input = create_raw_input([100, 23, 12])
+        input_lines = raw_input
+
+        actual_product_count = mission1.get_product_count(input_lines)
+
+        expected_product_count = 3
         self.assertEqual(actual_product_count, expected_product_count)
 
 
