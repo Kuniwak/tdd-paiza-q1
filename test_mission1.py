@@ -39,7 +39,6 @@ class TestMission1(unittest.TestCase):
         expected_product_count = 3
         self.assertEqual(actual_product_count, expected_product_count)
 
-    @unittest.skip('to fake it')
     def test_get_stocks_example1(self):
         stocks = [5, 10, 2, 3]
         raw_input = create_raw_input(stocks)
@@ -50,7 +49,6 @@ class TestMission1(unittest.TestCase):
         expected_stocks = stocks
         self.assertEqual(actual_stocks, expected_stocks)
 
-    @unittest.skip('to fake it')
     def test_get_stocks_example2(self):
         stocks = [100, 23, 12]
         raw_input = create_raw_input(stocks)
@@ -70,6 +68,31 @@ class TestMission1(unittest.TestCase):
 
         expected_stocks = stocks
         self.assertEqual(actual_stocks, expected_stocks)
+
+    def test_sum_stocks(self):
+        stocks = [2]
+
+        actual_sum_stocks = mission1.sum_stocks(stocks)
+
+        expected_sum_stocks = 2
+        self.assertEqual(actual_sum_stocks, expected_sum_stocks)
+
+    def test_sum_stocks_example1(self):
+        stocks = [5, 10, 2, 3]
+
+        actual_sum_stocks = mission1.sum_stocks(stocks)
+
+        expected_sum_stocks = 20
+        self.assertEqual(actual_sum_stocks, expected_sum_stocks)
+
+    def test_sum_stocks_example2(self):
+        stocks = [100, 23, 12]
+
+        actual_sum_stocks = mission1.sum_stocks(stocks)
+
+        expected_sum_stocks = 135
+        self.assertEqual(actual_sum_stocks, expected_sum_stocks)
+
 
 
 if __name__ == '__main__':
