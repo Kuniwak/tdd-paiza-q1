@@ -39,6 +39,38 @@ class TestMission1(unittest.TestCase):
         expected_product_count = 3
         self.assertEqual(actual_product_count, expected_product_count)
 
+    @unittest.skip('to fake it')
+    def test_get_stocks_example1(self):
+        stocks = [5, 10, 2, 3]
+        raw_input = create_raw_input(stocks)
+        input_lines = raw_input
+
+        actual_stocks = mission1.get_stocks(input_lines)
+
+        expected_stocks = stocks
+        self.assertEqual(actual_stocks, expected_stocks)
+
+    @unittest.skip('to fake it')
+    def test_get_stocks_example2(self):
+        stocks = [100, 23, 12]
+        raw_input = create_raw_input(stocks)
+        input_lines = raw_input
+
+        actual_stocks = mission1.get_stocks(input_lines)
+
+        expected_stocks = stocks
+        self.assertEqual(actual_stocks, expected_stocks)
+
+    def test_get_stocks_example2_with_no_last_line_break(self):
+        stocks = [100, 23, 12]
+        raw_input = create_raw_input(stocks, has_last_line_break=False)
+        input_lines = raw_input
+
+        actual_stocks = mission1.get_stocks(input_lines)
+
+        expected_stocks = stocks
+        self.assertEqual(actual_stocks, expected_stocks)
+
 
 if __name__ == '__main__':
     unittest.main()
